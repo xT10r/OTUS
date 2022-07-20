@@ -13,6 +13,7 @@ def post(self):
         user.validate()
         save_user(self.db_conn, user)
 
-    except Exception, e:
+    except Exception:
 
         return self.render_template("success_create.html")
+

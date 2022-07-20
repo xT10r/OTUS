@@ -1,3 +1,7 @@
 
+/**/.dccache
 /**/.idea/**/*
+/**/.vscode/**/*
 /**/**/*.csv
+
+/DevSecOps/05-HW/config.yml
