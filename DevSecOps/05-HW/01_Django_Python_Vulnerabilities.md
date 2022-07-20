@@ -3,12 +3,12 @@
 ### Недочеты в примерах кода
 
 Первым делом автоматически проверю исходный код на наличие уязвимостей
-Всего было найдено 2 уязвимости в <b>примере 1</b> ([example-01.py](.\examples\example-01.py))
+Всего было найдено 2 уязвимости в <b>примере 1</b> ([example-01.py](./examples/example-01.py))
 
 |tool|filename|test_name|test_id|issue_severity|issue_confidence|issue_cwe|issue_text|line_number|col_offset|line_range|more_info|
 |-|-|-|-|-|-|-|-|-|-|-|-|
-<b>Bandit</b>|[example-01.py](.\examples\example-01.py)|hardcoded_password_string|B105|LOW|MEDIUM|https://cwe.mitre.org/data/definitions/259.html|Possible hardcoded password: 'F0cUzh8BgYJSLXAU8qDmClM0dE8GJTpsiyVEl3BCqQMCABp1U$f%'|9|11|[9]|https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html|
-<b>SonarCloud</b>|[example-01.py](.\examples\example-01.py)|*Cross-Site Request Forgery (CSRF)||||https://cwe.mitre.org/data/definitions/352|app = Flask('vuln_app') --> app = Flask(\_\_name\_\_)|8|12|-|https://rules.sonarsource.com/python/RSPEC-4502|
+<b>Bandit</b>|[example-01.py](./examples/example-01.py)|hardcoded_password_string|B105|LOW|MEDIUM|https://cwe.mitre.org/data/definitions/259.html|Possible hardcoded password: 'F0cUzh8BgYJSLXAU8qDmClM0dE8GJTpsiyVEl3BCqQMCABp1U$f%'|9|11|[9]|https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html|
+<b>SonarCloud</b>|[example-01.py](./examples/example-01.py)|*Cross-Site Request Forgery (CSRF)||||https://cwe.mitre.org/data/definitions/352|app = Flask('vuln_app') --> app = Flask(\_\_name\_\_)|8|12|-|https://rules.sonarsource.com/python/RSPEC-4502|
 
 ---
 
