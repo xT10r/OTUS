@@ -1,0 +1,33 @@
+# .github/workflows/build.yml
+
+name: Build
+on:
+  push:
+    branches:
+      - main # or the name of your main branch
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: deep5050/cppcheck-action@main
+        with:
+          github_token: ${{ secrets.MY_GITHUB_TOKEN}}
+          output_file: report-cppcheck.xml
+          other_options: --xml --xml-version=2 --enable=all --suppress=missingIncludeSystem
+      - uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          BRANCH_NAME: 'main'
+      - uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      #- uses: sonarsource/sonarqube-quality-gate-action@master
+      #  with:
+      #    scanMetadataReportFile: .scannerwork/report-task.txt
+      #  env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
