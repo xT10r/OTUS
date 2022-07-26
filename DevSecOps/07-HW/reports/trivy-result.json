@@ -1,0 +1,3111 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "otus-devsecops-owasp-rest-custom",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.14.2"
+    },
+    "ImageID": "sha256:ee8f98ac02256c1b967de39c7985f8a71147b5c835b8335709ed09c3325e37f2",
+    "DiffIDs": [
+      "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68",
+      "sha256:a2f23be74558248e1b9f79e055f6161ceaf7541c5af98048adb6b372e6e4bae0",
+      "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e",
+      "sha256:45d4d0cf56eb27a5e738545953287c0f370d1e717543b569352de6bfcc648259",
+      "sha256:9cefc5fa1e1b7b3dc1a454a44c4a3828ccd6a23e3cf23bf2375a085574a42bcc",
+      "sha256:a263cfba6c5ad256aea0bf9f1c05bddfd9fde4b9a3484471ffb7ed639b88a070",
+      "sha256:c3a767b45315649df884804e96e3c81bc7a56ea445038464f583761f89cf31bb",
+      "sha256:90de15bc21c430e1e80ba4a1e0b56fb5f8ed0cd09a7aba708fa45d4d5e5f2840",
+      "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "sha256:43bf125ef7fac2c814b63113b896bdd3c33ed316181545e7785c28b1f0b599c6",
+      "sha256:deff7018580ab514ea194fb637aaef6f36b509e1094c916060ceeab48a2fbf1b",
+      "sha256:1da7c70742980da18f071135b701524994b8c19991be9a1d5e1b00b72e1e2bca",
+      "sha256:65dc2b7bab1992bd86dcd59c08abe043931272bb5ef9da604b6a84adbac5acec"
+    ],
+    "RepoTags": [
+      "otus-devsecops-owasp-rest-custom:latest"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "container": "eede8444e1ab51b08211c5340e8fbb96c6256fc010054a1236cb4d6a6838eecb",
+      "created": "2022-07-26T22:11:28.426957899Z",
+      "docker_version": "20.10.17",
+      "history": [
+        {
+          "created": "2021-08-27T17:19:45Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:aad4290d27580cc1a094ffaf98c3ca2fc5d699fe695dfb8e6e9fac20f1129450 in / "
+        },
+        {
+          "created": "2021-08-27T17:19:45Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-08-27T19:27:41Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-08-27T23:31:48Z",
+          "created_by": "/bin/sh -c #(nop)  ENV LANG=C.UTF-8",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-08-27T23:49:40Z",
+          "created_by": "/bin/sh -c set -eux; \tapk add --no-cache \t\tca-certificates \t;"
+        },
+        {
+          "created": "2021-08-27T23:57:19Z",
+          "created_by": "/bin/sh -c #(nop)  ENV GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-09-08T01:48:48Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PYTHON_VERSION=3.7.12",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-09-08T01:57:27Z",
+          "created_by": "/bin/sh -c set -ex \t\u0026\u0026 apk add --no-cache --virtual .fetch-deps \t\tgnupg \t\ttar \t\txz \t\t\u0026\u0026 wget -O python.tar.xz \"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz\" \t\u0026\u0026 wget -O python.tar.xz.asc \"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc\" \t\u0026\u0026 export GNUPGHOME=\"$(mktemp -d)\" \t\u0026\u0026 gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys \"$GPG_KEY\" \t\u0026\u0026 gpg --batch --verify python.tar.xz.asc python.tar.xz \t\u0026\u0026 { command -v gpgconf \u003e /dev/null \u0026\u0026 gpgconf --kill all || :; } \t\u0026\u0026 rm -rf \"$GNUPGHOME\" python.tar.xz.asc \t\u0026\u0026 mkdir -p /usr/src/python \t\u0026\u0026 tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz \t\u0026\u0026 rm python.tar.xz \t\t\u0026\u0026 apk add --no-cache --virtual .build-deps  \t\tbluez-dev \t\tbzip2-dev \t\tcoreutils \t\tdpkg-dev dpkg \t\texpat-dev \t\tfindutils \t\tgcc \t\tgdbm-dev \t\tlibc-dev \t\tlibffi-dev \t\tlibnsl-dev \t\tlibtirpc-dev \t\tlinux-headers \t\tmake \t\tncurses-dev \t\topenssl-dev \t\tpax-utils \t\treadline-dev \t\tsqlite-dev \t\ttcl-dev \t\ttk \t\ttk-dev \t\tutil-linux-dev \t\txz-dev \t\tzlib-dev \t\u0026\u0026 apk del --no-network .fetch-deps \t\t\u0026\u0026 cd /usr/src/python \t\u0026\u0026 gnuArch=\"$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)\" \t\u0026\u0026 ./configure \t\t--build=\"$gnuArch\" \t\t--enable-loadable-sqlite-extensions \t\t--enable-optimizations \t\t--enable-option-checking=fatal \t\t--enable-shared \t\t--with-system-expat \t\t--with-system-ffi \t\t--without-ensurepip \t\u0026\u0026 make -j \"$(nproc)\" \t\tEXTRA_CFLAGS=\"-DTHREAD_STACK_SIZE=0x100000\" \t\tLDFLAGS=\"-Wl,--strip-all\" \t\tPROFILE_TASK='-m test.regrtest --pgo \t\t\ttest_array \t\t\ttest_base64 \t\t\ttest_binascii \t\t\ttest_binhex \t\t\ttest_binop \t\t\ttest_bytes \t\t\ttest_c_locale_coercion \t\t\ttest_class \t\t\ttest_cmath \t\t\ttest_codecs \t\t\ttest_compile \t\t\ttest_complex \t\t\ttest_csv \t\t\ttest_decimal \t\t\ttest_dict \t\t\ttest_float \t\t\ttest_fstring \t\t\ttest_hashlib \t\t\ttest_io \t\t\ttest_iter \t\t\ttest_json \t\t\ttest_long \t\t\ttest_math \t\t\ttest_memoryview \t\t\ttest_pickle \t\t\ttest_re \t\t\ttest_set \t\t\ttest_slice \t\t\ttest_struct \t\t\ttest_threading \t\t\ttest_time \t\t\ttest_traceback \t\t\ttest_unicode \t\t' \t\u0026\u0026 make install \t\u0026\u0026 rm -rf /usr/src/python \t\t\u0026\u0026 find /usr/local -depth \t\t\\( \t\t\t\\( -type d -a \\( -name test -o -name tests -o -name idle_test \\) \\) \t\t\t-o \\( -type f -a \\( -name '*.pyc' -o -name '*.pyo' -o -name '*.a' \\) \\) \t\t\t-o \\( -type f -a -name 'wininst-*.exe' \\) \t\t\\) -exec rm -rf '{}' + \t\t\u0026\u0026 find /usr/local -type f -executable -not \\( -name '*tkinter*' \\) -exec scanelf --needed --nobanner --format '%n#p' '{}' ';' \t\t| tr ',' '\\n' \t\t| sort -u \t\t| awk 'system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }' \t\t| xargs -rt apk add --no-cache --virtual .python-rundeps \t\u0026\u0026 apk del --no-network .build-deps \t\t\u0026\u0026 python3 --version"
+        },
+        {
+          "created": "2021-09-08T01:57:28Z",
+          "created_by": "/bin/sh -c cd /usr/local/bin \t\u0026\u0026 ln -s idle3 idle \t\u0026\u0026 ln -s pydoc3 pydoc \t\u0026\u0026 ln -s python3 python \t\u0026\u0026 ln -s python3-config python-config"
+        },
+        {
+          "created": "2021-09-08T01:57:28Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PYTHON_PIP_VERSION=21.2.4",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-09-08T01:57:28Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PYTHON_SETUPTOOLS_VERSION=57.5.0",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-06T00:32:35Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/d781367b97acf0ece7e9e304bf281e99b618bf10/public/get-pip.py",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-06T00:32:35Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PYTHON_GET_PIP_SHA256=01249aa3e58ffb3e1686b7141b4e9aac4d398ef4ac3012ed9dff8dd9f685ffe0",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-06T00:32:41Z",
+          "created_by": "/bin/sh -c set -ex; \t\twget -O get-pip.py \"$PYTHON_GET_PIP_URL\"; \techo \"$PYTHON_GET_PIP_SHA256 *get-pip.py\" | sha256sum -c -; \t\tpython get-pip.py \t\t--disable-pip-version-check \t\t--no-cache-dir \t\t\"pip==$PYTHON_PIP_VERSION\" \t\t\"setuptools==$PYTHON_SETUPTOOLS_VERSION\" \t; \tpip --version; \t\tfind /usr/local -depth \t\t\\( \t\t\t\\( -type d -a \\( -name test -o -name tests -o -name idle_test \\) \\) \t\t\t-o \t\t\t\\( -type f -a \\( -name '*.pyc' -o -name '*.pyo' \\) \\) \t\t\\) -exec rm -rf '{}' +; \trm -f get-pip.py"
+        },
+        {
+          "created": "2021-10-06T00:32:42Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"python3\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-15T03:51:26Z",
+          "created_by": "RUN /bin/sh -c mkdir /vampi # buildkit",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-15T03:51:27Z",
+          "created_by": "RUN /bin/sh -c apk --update add bash nano # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2021-10-15T05:49:42Z",
+          "created_by": "ENV vulnerable=1",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-15T05:49:42Z",
+          "created_by": "ENV tokentimetolive=60",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-15T05:49:42Z",
+          "created_by": "COPY . /vampi # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2021-10-15T05:49:42Z",
+          "created_by": "WORKDIR /vampi",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-15T05:49:50Z",
+          "created_by": "RUN /bin/sh -c apk add build-base # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2021-10-15T05:50:27Z",
+          "created_by": "RUN /bin/sh -c pip install -r requirements.txt # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2021-10-15T05:50:27Z",
+          "created_by": "ENTRYPOINT [\"python\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2021-10-15T05:50:27Z",
+          "created_by": "CMD [\"app.py\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2022-07-26T22:11:27Z",
+          "created_by": "/bin/sh -c addgroup -S otus_group     \u0026\u0026 adduser -S otus_user -G otus_group     \u0026\u0026 rm -rf /var/cache/apk/*"
+        },
+        {
+          "created": "2022-07-26T22:11:28Z",
+          "created_by": "/bin/sh -c chown -R otus_user:otus_group /vampi"
+        },
+        {
+          "created": "2022-07-26T22:11:28Z",
+          "created_by": "/bin/sh -c #(nop)  USER otus_user",
+          "empty_layer": true
+        },
+        {
+          "created": "2022-07-26T22:11:28Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 8080",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68",
+          "sha256:a2f23be74558248e1b9f79e055f6161ceaf7541c5af98048adb6b372e6e4bae0",
+          "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e",
+          "sha256:45d4d0cf56eb27a5e738545953287c0f370d1e717543b569352de6bfcc648259",
+          "sha256:9cefc5fa1e1b7b3dc1a454a44c4a3828ccd6a23e3cf23bf2375a085574a42bcc",
+          "sha256:a263cfba6c5ad256aea0bf9f1c05bddfd9fde4b9a3484471ffb7ed639b88a070",
+          "sha256:c3a767b45315649df884804e96e3c81bc7a56ea445038464f583761f89cf31bb",
+          "sha256:90de15bc21c430e1e80ba4a1e0b56fb5f8ed0cd09a7aba708fa45d4d5e5f2840",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "sha256:43bf125ef7fac2c814b63113b896bdd3c33ed316181545e7785c28b1f0b599c6",
+          "sha256:deff7018580ab514ea194fb637aaef6f36b509e1094c916060ceeab48a2fbf1b",
+          "sha256:1da7c70742980da18f071135b701524994b8c19991be9a1d5e1b00b72e1e2bca",
+          "sha256:65dc2b7bab1992bd86dcd59c08abe043931272bb5ef9da604b6a84adbac5acec"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "app.py"
+        ],
+        "Entrypoint": [
+          "python"
+        ],
+        "Env": [
+          "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "LANG=C.UTF-8",
+          "GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D",
+          "PYTHON_VERSION=3.7.12",
+          "PYTHON_PIP_VERSION=21.2.4",
+          "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+          "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/d781367b97acf0ece7e9e304bf281e99b618bf10/public/get-pip.py",
+          "PYTHON_GET_PIP_SHA256=01249aa3e58ffb3e1686b7141b4e9aac4d398ef4ac3012ed9dff8dd9f685ffe0",
+          "vulnerable=1",
+          "tokentimetolive=60"
+        ],
+        "Image": "sha256:d1f13d470b02c0bbf540f0a71d1dfe990cf2a9aa69db0baf6e7664a5aabfb62b",
+        "User": "otus_user",
+        "WorkingDir": "/vampi",
+        "ArgsEscaped": true
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "otus-devsecops-owasp-rest-custom (alpine 3.14.2)",
+      "Class": "os-pkgs",
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2022-28391",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r7",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-28391",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: remote attackers may execute arbitrary code if netstat is used",
+          "Description": "BusyBox through 1.35.0 allows remote attackers to execute arbitrary code if netstat is used to print a DNS PTR record's value to a VT compatible terminal. Alternatively, the attacker could choose to change the terminal's colors.",
+          "Severity": "CRITICAL",
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-28391",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28391",
+            "https://git.alpinelinux.org/aports/plain/main/busybox/0001-libbb-sockaddr2str-ensure-only-printable-characters-.patch",
+            "https://git.alpinelinux.org/aports/plain/main/busybox/0002-nslookup-sanitize-all-printed-strings-with-printable.patch",
+            "https://gitlab.alpinelinux.org/alpine/aports/-/issues/13661",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-28391"
+          ],
+          "PublishedDate": "2022-04-03T21:15:00Z",
+          "LastModifiedDate": "2022-04-12T17:31:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42378",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42378",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42378",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42378",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42379",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42379",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42379",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42379",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42379",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42380",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42380",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42380",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42380",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42380",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:10:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42381",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42381",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42381",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42381",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42381",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:13:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42382",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42382",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42382",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42382",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42382",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:16:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42383",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42383",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42383",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:16:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42384",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42384",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42384",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42384",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42384",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42385",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42385",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42385",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42385",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42385",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:14:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42386",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42386",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42386",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42386",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42386",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:14:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42374",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r4",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42374",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: out-of-bounds read in unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed",
+          "Description": "An out-of-bounds heap read in Busybox's unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed. This can be triggered by any applet/format that",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:P/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H",
+              "V2Score": 3.3,
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 5.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42374",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42374",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42374",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-03-31T16:29:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42375",
+          "PkgName": "busybox",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r5",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42375",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: incorrect handling of a special element in ash applet leads to denial of service when processing a crafted shell command",
+          "Description": "An incorrect handling of a special element in Busybox's ash applet leads to denial of service when processing a crafted shell command, due to the shell mistaking specific characters for reserved characters. This may be used for DoS under rare conditions of filtered command input.",
+          "Severity": "MEDIUM",
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 1.9,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 4.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42375",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-03-31T16:29:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-22822",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-22822",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Integer overflow in addBinding in xmlparse.c",
+          "Description": "addBinding in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2022-22822",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22822",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/pull/539",
+            "https://linux.oracle.com/cve/CVE-2022-22822.html",
+            "https://linux.oracle.com/errata/ELSA-2022-1069.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-22822",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-10T14:12:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-22823",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-22823",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Integer overflow in build_model in xmlparse.c",
+          "Description": "build_model in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2022-22823",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22823",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/pull/539",
+            "https://linux.oracle.com/cve/CVE-2022-22823.html",
+            "https://linux.oracle.com/errata/ELSA-2022-1069.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-22823",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-10T14:12:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-22824",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-22824",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Integer overflow in defineAttribute in xmlparse.c",
+          "Description": "defineAttribute in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2022-22824",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22824",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/pull/539",
+            "https://linux.oracle.com/cve/CVE-2022-22824.html",
+            "https://linux.oracle.com/errata/ELSA-2022-1069.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-22824",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-10T14:12:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-23852",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.4-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-23852",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Integer overflow in function XML_GetBuffer",
+          "Description": "Expat (aka libexpat) before 2.4.4 has a signed integer overflow in XML_GetBuffer, for configurations with a nonzero XML_CONTEXT_BYTES.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2022-23852",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23852",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/pull/550",
+            "https://linux.oracle.com/cve/CVE-2022-23852.html",
+            "https://linux.oracle.com/errata/ELSA-2022-1069.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-23852",
+            "https://security.netapp.com/advisory/ntap-20220217-0001/",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-24T02:15:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-23990",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.4-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-23990",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: integer overflow in the doProlog function",
+          "Description": "Expat (aka libexpat) before 2.4.4 has an integer overflow in the doProlog function.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-23990",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23990",
+            "https://github.com/libexpat/libexpat/pull/551",
+            "https://linux.oracle.com/cve/CVE-2022-23990.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9232.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/34NXVL2RZC2YZRV74ZQ3RNFB7WCEUP7D/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R7FF2UH7MPXKTADYSJUAHI2Y5UHBSHUH/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-23990",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-26T19:15:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25235",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.5-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25235",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Malformed 2- and 3-byte UTF-8 sequences can lead to arbitrary code execution",
+          "Description": "xmltok_impl.c in Expat (aka libexpat) before 2.4.5 lacks certain validation of encoding, such as checks for whether a UTF-8 character is valid in a certain context.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-116"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+            "https://access.redhat.com/security/cve/CVE-2022-25235",
+            "https://blog.hartwork.org/posts/expat-2-4-5-released/",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25235",
+            "https://github.com/libexpat/libexpat/pull/562",
+            "https://github.com/libexpat/libexpat/pull/562/commits/367ae600b48d74261bbc339b17e9318424049791 (fix)",
+            "https://github.com/libexpat/libexpat/pull/562/commits/97cfdc3fa7dca759880d81e371901f4620279106 (tests)",
+            "https://linux.oracle.com/cve/CVE-2022-25235.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9359.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25235",
+            "https://security.netapp.com/advisory/ntap-20220303-0008/",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5085",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html"
+          ],
+          "PublishedDate": "2022-02-16T01:15:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25236",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.5-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25236",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Namespace-separator characters in \"xmlns[:prefix]\" attribute values can lead to arbitrary code execution",
+          "Description": "xmlparse.c in Expat (aka libexpat) before 2.4.5 allows attackers to insert namespace-separator characters into namespace URIs.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-668"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "http://packetstormsecurity.com/files/167238/Zoom-XMPP-Stanza-Smuggling-Remote-Code-Execution.html",
+            "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2022-25236",
+            "https://blog.hartwork.org/posts/expat-2-4-5-released/",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25236",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/pull/561",
+            "https://github.com/libexpat/libexpat/pull/561/commits/2de077423fb22750ebea599677d523b53cb93b1d (test)",
+            "https://github.com/libexpat/libexpat/pull/561/commits/a2fe525e660badd64b6c557c2b1ec26ddc07f6e4 (fix)",
+            "https://github.com/libexpat/libexpat/pull/577",
+            "https://linux.oracle.com/cve/CVE-2022-25236.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9359.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25236",
+            "https://security.netapp.com/advisory/ntap-20220303-0008/",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5085",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html"
+          ],
+          "PublishedDate": "2022-02-16T01:15:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25315",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.5-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25315",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Integer overflow in storeRawNames()",
+          "Description": "In Expat (aka libexpat) before 2.4.5, there is an integer overflow in storeRawNames.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2022-25315",
+            "https://blog.hartwork.org/posts/expat-2-4-5-released/",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25315",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/pull/559",
+            "https://linux.oracle.com/cve/CVE-2022-25315.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9359.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25315",
+            "https://security.netapp.com/advisory/ntap-20220303-0008/",
+            "https://ubuntu.com/security/notices/USN-5320-1",
+            "https://www.debian.org/security/2022/dsa-5085",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html"
+          ],
+          "PublishedDate": "2022-02-18T05:15:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-45960",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-45960",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Large number of prefixed XML attributes on a single tag can crash libexpat",
+          "Description": "In Expat (aka libexpat) before 2.4.3, a left shift by 29 (or more) places in the storeAtts function in xmlparse.c can lead to realloc misbehavior (e.g., allocating too few bytes, or only freeing memory).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-682"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:C/I:C/A:C",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 9,
+              "V3Score": 8.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2021-45960",
+            "https://bugzilla.mozilla.org/show_bug.cgi?id=1217609",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45960",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/issues/531",
+            "https://github.com/libexpat/libexpat/pull/534",
+            "https://github.com/libexpat/libexpat/pull/534/commits/0adcb34c49bee5b19bd29b16a578c510c23597ea",
+            "https://linux.oracle.com/cve/CVE-2021-45960.html",
+            "https://linux.oracle.com/errata/ELSA-2022-1069.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-45960",
+            "https://security.netapp.com/advisory/ntap-20220121-0004/",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-01T19:15:00Z",
+          "LastModifiedDate": "2022-07-12T17:42:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-46143",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-46143",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Integer overflow in doProlog in xmlparse.c",
+          "Description": "In doProlog in xmlparse.c in Expat (aka libexpat) before 2.4.3, an integer overflow exists for m_groupSize.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V2Score": 6.8,
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2021-46143",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46143",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/issues/532",
+            "https://github.com/libexpat/libexpat/pull/538",
+            "https://linux.oracle.com/cve/CVE-2021-46143.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9227.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-46143",
+            "https://security.netapp.com/advisory/ntap-20220121-0006/",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-06T04:15:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-22825",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-22825",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Integer overflow in lookup in xmlparse.c",
+          "Description": "lookup in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V2Score": 6.8,
+              "V3Score": 8.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 8.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2022-22825",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22825",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/pull/539",
+            "https://linux.oracle.com/cve/CVE-2022-22825.html",
+            "https://linux.oracle.com/errata/ELSA-2022-1069.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-22825",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-10T14:12:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-22826",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-22826",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Integer overflow in nextScaffoldPart in xmlparse.c",
+          "Description": "nextScaffoldPart in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V2Score": 6.8,
+              "V3Score": 8.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 8.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2022-22826",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22826",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/pull/539",
+            "https://linux.oracle.com/cve/CVE-2022-22826.html",
+            "https://linux.oracle.com/errata/ELSA-2022-1069.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-22826",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-10T14:12:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-22827",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-22827",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: Integer overflow in storeAtts in xmlparse.c",
+          "Description": "storeAtts in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V2Score": 6.8,
+              "V3Score": 8.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 8.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/01/17/3",
+            "https://access.redhat.com/errata/RHSA-2022:0951",
+            "https://access.redhat.com/security/cve/CVE-2022-22827",
+            "https://bugzilla.redhat.com/2044451",
+            "https://bugzilla.redhat.com/2044455",
+            "https://bugzilla.redhat.com/2044457",
+            "https://bugzilla.redhat.com/2044464",
+            "https://bugzilla.redhat.com/2044467",
+            "https://bugzilla.redhat.com/2044479",
+            "https://bugzilla.redhat.com/2044484",
+            "https://bugzilla.redhat.com/2044488",
+            "https://bugzilla.redhat.com/2044613",
+            "https://bugzilla.redhat.com/2056363",
+            "https://bugzilla.redhat.com/2056366",
+            "https://bugzilla.redhat.com/2056370",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22827",
+            "https://errata.almalinux.org/8/ALSA-2022-0951.html",
+            "https://github.com/libexpat/libexpat/pull/539",
+            "https://linux.oracle.com/cve/CVE-2022-22827.html",
+            "https://linux.oracle.com/errata/ELSA-2022-1069.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-22827",
+            "https://ubuntu.com/security/notices/USN-5288-1",
+            "https://www.debian.org/security/2022/dsa-5073",
+            "https://www.tenable.com/security/tns-2022-05"
+          ],
+          "PublishedDate": "2022-01-10T14:12:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25314",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.5-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25314",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: integer overflow in copyString()",
+          "Description": "In Expat (aka libexpat) before 2.4.5, there is an integer overflow in copyString.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+            "https://access.redhat.com/security/cve/CVE-2022-25314",
+            "https://blog.hartwork.org/posts/expat-2-4-5-released/",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25314",
+            "https://github.com/libexpat/libexpat/pull/560",
+            "https://linux.oracle.com/cve/CVE-2022-25314.html",
+            "https://linux.oracle.com/errata/ELSA-2022-5314.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25314",
+            "https://security.netapp.com/advisory/ntap-20220303-0008/",
+            "https://ubuntu.com/security/notices/USN-5320-1",
+            "https://www.debian.org/security/2022/dsa-5085",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html"
+          ],
+          "PublishedDate": "2022-02-18T05:15:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25313",
+          "PkgName": "expat",
+          "InstalledVersion": "2.4.1-r0",
+          "FixedVersion": "2.4.5-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25313",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: stack exhaustion in doctype parsing",
+          "Description": "In Expat (aka libexpat) before 2.4.5, an attacker can trigger stack exhaustion in build_model via a large nesting depth in the DTD element.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 4.3,
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2022/02/19/1",
+            "https://access.redhat.com/security/cve/CVE-2022-25313",
+            "https://blog.hartwork.org/posts/expat-2-4-5-released/",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-484086.pdf",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25313",
+            "https://github.com/libexpat/libexpat/pull/558",
+            "https://linux.oracle.com/cve/CVE-2022-25313.html",
+            "https://linux.oracle.com/errata/ELSA-2022-5314.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00007.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UFRBA3UQVIQKXTBUQXDWQOVWNBKLERU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y27XO3JMKAOMQZVPS3B4MJGEAHCZF5OM/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25313",
+            "https://security.netapp.com/advisory/ntap-20220303-0008/",
+            "https://ubuntu.com/security/notices/USN-5320-1",
+            "https://www.debian.org/security/2022/dsa-5085",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html"
+          ],
+          "PublishedDate": "2022-02-18T05:15:00Z",
+          "LastModifiedDate": "2022-06-14T11:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-43618",
+          "PkgName": "gmp",
+          "InstalledVersion": "6.2.1-r0",
+          "FixedVersion": "6.2.1-r1",
+          "Layer": {
+            "DiffID": "sha256:43bf125ef7fac2c814b63113b896bdd3c33ed316181545e7785c28b1f0b599c6"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-43618",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "gmp: Integer overflow and resultant buffer overflow via crafted input",
+          "Description": "GNU Multiple Precision Arithmetic Library (GMP) through 6.2.1 has an mpz/inp_raw.c integer overflow and resultant buffer overflow via crafted input, leading to a segmentation fault on 32-bit platforms.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.2
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-43618",
+            "https://bugs.debian.org/994405",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43618",
+            "https://gmplib.org/list-archives/gmp-bugs/2021-September/005077.html",
+            "https://gmplib.org/repo/gmp-6.2/rev/561a9c25298e",
+            "https://lists.debian.org/debian-lts-announce/2021/12/msg00001.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-43618"
+          ],
+          "PublishedDate": "2021-11-15T04:15:00Z",
+          "LastModifiedDate": "2021-12-16T18:39:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-37750",
+          "PkgName": "krb5-libs",
+          "InstalledVersion": "1.18.4-r0",
+          "FixedVersion": "1.18.5-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-37750",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "krb5: NULL pointer dereference in process_tgs_req() in kdc/do_tgs_req.c via a FAST inner body that lacks server field",
+          "Description": "The Key Distribution Center (KDC) in MIT Kerberos 5 (aka krb5) before 1.18.5 and 1.19.x before 1.19.3 has a NULL pointer dereference in kdc/do_tgs_req.c via a FAST inner body that lacks a server field.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 4,
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-37750.json",
+            "https://access.redhat.com/security/cve/CVE-2021-37750",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37750",
+            "https://github.com/krb5/krb5/commit/d775c95af7606a51bf79547a94fa52ddd1cb7f49",
+            "https://github.com/krb5/krb5/releases",
+            "https://linux.oracle.com/cve/CVE-2021-37750.html",
+            "https://linux.oracle.com/errata/ELSA-2021-4788.html",
+            "https://lists.debian.org/debian-lts-announce/2021/09/msg00019.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MFCLW7D46E4VCREKKH453T5DA4XOLHU2/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-37750",
+            "https://security.netapp.com/advisory/ntap-20210923-0002/",
+            "https://web.mit.edu/kerberos/advisories/",
+            "https://www.oracle.com/security-alerts/cpujul2022.html"
+          ],
+          "PublishedDate": "2021-08-23T05:15:00Z",
+          "LastModifiedDate": "2022-07-25T18:16:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-0778",
+          "PkgName": "libcrypto1.1",
+          "InstalledVersion": "1.1.1l-r0",
+          "FixedVersion": "1.1.1n-r0",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0778",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: Infinite loop in BN_mod_sqrt() reachable when parsing certificates",
+          "Description": "The BN_mod_sqrt() function, which computes a modular square root, contains a bug that can cause it to loop forever for non-prime moduli. Internally this function is used when parsing certificates that contain elliptic curve public keys in compressed form or explicit elliptic curve parameters with a base point encoded in compressed form. It is possible to trigger the infinite loop by crafting a certificate that has invalid explicit curve parameters. Since certificate parsing happens prior to verification of the certificate signature, any process that parses an externally supplied certificate may thus be subject to a denial of service attack. The infinite loop can also be reached when parsing crafted private keys as they can contain explicit elliptic curve parameters. Thus vulnerable situations include: - TLS clients consuming server certificates - TLS servers consuming client certificates - Hosting providers taking certificates or private keys from customers - Certificate authorities parsing certification requests from subscribers - Anything else which parses ASN.1 elliptic curve parameters Also any other applications that use the BN_mod_sqrt() where the attacker can control the parameter values are vulnerable to this DoS issue. In the OpenSSL 1.0.2 version the public key is not parsed during initial parsing of the certificate which makes it slightly harder to trigger the infinite loop. However any operation which requires the public key from the certificate will trigger the infinite loop. In particular the attacker can use a self-signed certificate to trigger the loop during verification of the certificate signature. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0. It was addressed in the releases of 1.1.1n and 3.0.2 on the 15th March 2022. Fixed in OpenSSL 3.0.2 (Affected 3.0.0,3.0.1). Fixed in OpenSSL 1.1.1n (Affected 1.1.1-1.1.1m). Fixed in OpenSSL 1.0.2zd (Affected 1.0.2-1.0.2zc).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-835"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://packetstormsecurity.com/files/167344/OpenSSL-1.0.2-1.1.1-3.0-BN_mod_sqrt-Infinite-Loop.html",
+            "http://seclists.org/fulldisclosure/2022/May/33",
+            "http://seclists.org/fulldisclosure/2022/May/35",
+            "http://seclists.org/fulldisclosure/2022/May/38",
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-0778.json",
+            "https://access.redhat.com/security/cve/CVE-2022-0778",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-712929.pdf",
+            "https://crates.io/crates/openssl-src",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778",
+            "https://errata.almalinux.org/8/ALSA-2022-1065.html",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3118eb64934499d93db3230748a452351d1d9a65",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=380085481c64de749a6dd25cdf0bcf4360b30f83",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a466912611aa6cbdf550cd10601390e587451246",
+            "https://linux.oracle.com/cve/CVE-2022-0778.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9272.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00023.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00024.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/323SNN6ZX7PRJJWP2BUAFLPUAE42XWLZ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GDB3GQVJPXJE7X5C5JN6JAA4XUDWD6E6/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W6K3PR542DXWLEFFMFIDMME4CWMHJRMG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-0778",
+            "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0002",
+            "https://rustsec.org/advisories/RUSTSEC-2022-0014.html",
+            "https://security.netapp.com/advisory/ntap-20220321-0002/",
+            "https://security.netapp.com/advisory/ntap-20220429-0005/",
+            "https://support.apple.com/kb/HT213255",
+            "https://support.apple.com/kb/HT213256",
+            "https://support.apple.com/kb/HT213257",
+            "https://ubuntu.com/security/notices/USN-5328-1",
+            "https://ubuntu.com/security/notices/USN-5328-2",
+            "https://www.debian.org/security/2022/dsa-5103",
+            "https://www.openssl.org/news/secadv/20220315.txt",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html",
+            "https://www.oracle.com/security-alerts/cpujul2022.html",
+            "https://www.tenable.com/security/tns-2022-06",
+            "https://www.tenable.com/security/tns-2022-07",
+            "https://www.tenable.com/security/tns-2022-08",
+            "https://www.tenable.com/security/tns-2022-09"
+          ],
+          "PublishedDate": "2022-03-15T17:15:00Z",
+          "LastModifiedDate": "2022-07-25T18:19:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-2097",
+          "PkgName": "libcrypto1.1",
+          "InstalledVersion": "1.1.1l-r0",
+          "FixedVersion": "1.1.1q-r0",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-2097",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: AES OCB fails to encrypt some bytes",
+          "Description": "AES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised implementation will not encrypt the entirety of the data under some circumstances. This could reveal sixteen bytes of data that was preexisting in the memory that wasn't written. In the special case of \"in place\" encryption, sixteen bytes of the plaintext would be revealed. Since OpenSSL does not support OCB based cipher suites for TLS and DTLS, they are both unaffected. Fixed in OpenSSL 3.0.5 (Affected 3.0.0-3.0.4). Fixed in OpenSSL 1.1.1q (Affected 1.1.1-1.1.1p).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-326"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-2097",
+            "https://crates.io/crates/openssl-src",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2097",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=919925673d6c9cfed3c1085497f5dfbbed5fc431",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a98f339ddd7e8f487d6e0088d4a9a42324885a93",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R6CK57NBQFTPUMXAPJURCGXUYT76NQAK/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/V6567JERRHHJW2GNGJGKDRNHR7SNPZK7/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VCMNWKERPBKOEBNL7CLTTX3ZZCZLH7XA/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-2097",
+            "https://rustsec.org/advisories/RUSTSEC-2022-0032.html",
+            "https://security.netapp.com/advisory/ntap-20220715-0011/",
+            "https://ubuntu.com/security/notices/USN-5502-1",
+            "https://www.openssl.org/news/secadv/20220705.txt"
+          ],
+          "PublishedDate": "2022-07-05T11:15:00Z",
+          "LastModifiedDate": "2022-07-23T04:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-0778",
+          "PkgName": "libretls",
+          "InstalledVersion": "3.3.3p1-r2",
+          "FixedVersion": "3.3.3p1-r3",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0778",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: Infinite loop in BN_mod_sqrt() reachable when parsing certificates",
+          "Description": "The BN_mod_sqrt() function, which computes a modular square root, contains a bug that can cause it to loop forever for non-prime moduli. Internally this function is used when parsing certificates that contain elliptic curve public keys in compressed form or explicit elliptic curve parameters with a base point encoded in compressed form. It is possible to trigger the infinite loop by crafting a certificate that has invalid explicit curve parameters. Since certificate parsing happens prior to verification of the certificate signature, any process that parses an externally supplied certificate may thus be subject to a denial of service attack. The infinite loop can also be reached when parsing crafted private keys as they can contain explicit elliptic curve parameters. Thus vulnerable situations include: - TLS clients consuming server certificates - TLS servers consuming client certificates - Hosting providers taking certificates or private keys from customers - Certificate authorities parsing certification requests from subscribers - Anything else which parses ASN.1 elliptic curve parameters Also any other applications that use the BN_mod_sqrt() where the attacker can control the parameter values are vulnerable to this DoS issue. In the OpenSSL 1.0.2 version the public key is not parsed during initial parsing of the certificate which makes it slightly harder to trigger the infinite loop. However any operation which requires the public key from the certificate will trigger the infinite loop. In particular the attacker can use a self-signed certificate to trigger the loop during verification of the certificate signature. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0. It was addressed in the releases of 1.1.1n and 3.0.2 on the 15th March 2022. Fixed in OpenSSL 3.0.2 (Affected 3.0.0,3.0.1). Fixed in OpenSSL 1.1.1n (Affected 1.1.1-1.1.1m). Fixed in OpenSSL 1.0.2zd (Affected 1.0.2-1.0.2zc).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-835"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://packetstormsecurity.com/files/167344/OpenSSL-1.0.2-1.1.1-3.0-BN_mod_sqrt-Infinite-Loop.html",
+            "http://seclists.org/fulldisclosure/2022/May/33",
+            "http://seclists.org/fulldisclosure/2022/May/35",
+            "http://seclists.org/fulldisclosure/2022/May/38",
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-0778.json",
+            "https://access.redhat.com/security/cve/CVE-2022-0778",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-712929.pdf",
+            "https://crates.io/crates/openssl-src",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778",
+            "https://errata.almalinux.org/8/ALSA-2022-1065.html",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3118eb64934499d93db3230748a452351d1d9a65",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=380085481c64de749a6dd25cdf0bcf4360b30f83",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a466912611aa6cbdf550cd10601390e587451246",
+            "https://linux.oracle.com/cve/CVE-2022-0778.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9272.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00023.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00024.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/323SNN6ZX7PRJJWP2BUAFLPUAE42XWLZ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GDB3GQVJPXJE7X5C5JN6JAA4XUDWD6E6/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W6K3PR542DXWLEFFMFIDMME4CWMHJRMG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-0778",
+            "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0002",
+            "https://rustsec.org/advisories/RUSTSEC-2022-0014.html",
+            "https://security.netapp.com/advisory/ntap-20220321-0002/",
+            "https://security.netapp.com/advisory/ntap-20220429-0005/",
+            "https://support.apple.com/kb/HT213255",
+            "https://support.apple.com/kb/HT213256",
+            "https://support.apple.com/kb/HT213257",
+            "https://ubuntu.com/security/notices/USN-5328-1",
+            "https://ubuntu.com/security/notices/USN-5328-2",
+            "https://www.debian.org/security/2022/dsa-5103",
+            "https://www.openssl.org/news/secadv/20220315.txt",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html",
+            "https://www.oracle.com/security-alerts/cpujul2022.html",
+            "https://www.tenable.com/security/tns-2022-06",
+            "https://www.tenable.com/security/tns-2022-07",
+            "https://www.tenable.com/security/tns-2022-08",
+            "https://www.tenable.com/security/tns-2022-09"
+          ],
+          "PublishedDate": "2022-03-15T17:15:00Z",
+          "LastModifiedDate": "2022-07-25T18:19:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-0778",
+          "PkgName": "libssl1.1",
+          "InstalledVersion": "1.1.1l-r0",
+          "FixedVersion": "1.1.1n-r0",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0778",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: Infinite loop in BN_mod_sqrt() reachable when parsing certificates",
+          "Description": "The BN_mod_sqrt() function, which computes a modular square root, contains a bug that can cause it to loop forever for non-prime moduli. Internally this function is used when parsing certificates that contain elliptic curve public keys in compressed form or explicit elliptic curve parameters with a base point encoded in compressed form. It is possible to trigger the infinite loop by crafting a certificate that has invalid explicit curve parameters. Since certificate parsing happens prior to verification of the certificate signature, any process that parses an externally supplied certificate may thus be subject to a denial of service attack. The infinite loop can also be reached when parsing crafted private keys as they can contain explicit elliptic curve parameters. Thus vulnerable situations include: - TLS clients consuming server certificates - TLS servers consuming client certificates - Hosting providers taking certificates or private keys from customers - Certificate authorities parsing certification requests from subscribers - Anything else which parses ASN.1 elliptic curve parameters Also any other applications that use the BN_mod_sqrt() where the attacker can control the parameter values are vulnerable to this DoS issue. In the OpenSSL 1.0.2 version the public key is not parsed during initial parsing of the certificate which makes it slightly harder to trigger the infinite loop. However any operation which requires the public key from the certificate will trigger the infinite loop. In particular the attacker can use a self-signed certificate to trigger the loop during verification of the certificate signature. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0. It was addressed in the releases of 1.1.1n and 3.0.2 on the 15th March 2022. Fixed in OpenSSL 3.0.2 (Affected 3.0.0,3.0.1). Fixed in OpenSSL 1.1.1n (Affected 1.1.1-1.1.1m). Fixed in OpenSSL 1.0.2zd (Affected 1.0.2-1.0.2zc).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-835"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://packetstormsecurity.com/files/167344/OpenSSL-1.0.2-1.1.1-3.0-BN_mod_sqrt-Infinite-Loop.html",
+            "http://seclists.org/fulldisclosure/2022/May/33",
+            "http://seclists.org/fulldisclosure/2022/May/35",
+            "http://seclists.org/fulldisclosure/2022/May/38",
+            "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-0778.json",
+            "https://access.redhat.com/security/cve/CVE-2022-0778",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-712929.pdf",
+            "https://crates.io/crates/openssl-src",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778",
+            "https://errata.almalinux.org/8/ALSA-2022-1065.html",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3118eb64934499d93db3230748a452351d1d9a65",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=380085481c64de749a6dd25cdf0bcf4360b30f83",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a466912611aa6cbdf550cd10601390e587451246",
+            "https://linux.oracle.com/cve/CVE-2022-0778.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9272.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00023.html",
+            "https://lists.debian.org/debian-lts-announce/2022/03/msg00024.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/323SNN6ZX7PRJJWP2BUAFLPUAE42XWLZ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GDB3GQVJPXJE7X5C5JN6JAA4XUDWD6E6/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W6K3PR542DXWLEFFMFIDMME4CWMHJRMG/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-0778",
+            "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0002",
+            "https://rustsec.org/advisories/RUSTSEC-2022-0014.html",
+            "https://security.netapp.com/advisory/ntap-20220321-0002/",
+            "https://security.netapp.com/advisory/ntap-20220429-0005/",
+            "https://support.apple.com/kb/HT213255",
+            "https://support.apple.com/kb/HT213256",
+            "https://support.apple.com/kb/HT213257",
+            "https://ubuntu.com/security/notices/USN-5328-1",
+            "https://ubuntu.com/security/notices/USN-5328-2",
+            "https://www.debian.org/security/2022/dsa-5103",
+            "https://www.openssl.org/news/secadv/20220315.txt",
+            "https://www.oracle.com/security-alerts/cpuapr2022.html",
+            "https://www.oracle.com/security-alerts/cpujul2022.html",
+            "https://www.tenable.com/security/tns-2022-06",
+            "https://www.tenable.com/security/tns-2022-07",
+            "https://www.tenable.com/security/tns-2022-08",
+            "https://www.tenable.com/security/tns-2022-09"
+          ],
+          "PublishedDate": "2022-03-15T17:15:00Z",
+          "LastModifiedDate": "2022-07-25T18:19:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-2097",
+          "PkgName": "libssl1.1",
+          "InstalledVersion": "1.1.1l-r0",
+          "FixedVersion": "1.1.1q-r0",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-2097",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "openssl: AES OCB fails to encrypt some bytes",
+          "Description": "AES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised implementation will not encrypt the entirety of the data under some circumstances. This could reveal sixteen bytes of data that was preexisting in the memory that wasn't written. In the special case of \"in place\" encryption, sixteen bytes of the plaintext would be revealed. Since OpenSSL does not support OCB based cipher suites for TLS and DTLS, they are both unaffected. Fixed in OpenSSL 3.0.5 (Affected 3.0.0-3.0.4). Fixed in OpenSSL 1.1.1q (Affected 1.1.1-1.1.1p).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-326"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-2097",
+            "https://crates.io/crates/openssl-src",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2097",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=919925673d6c9cfed3c1085497f5dfbbed5fc431",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=a98f339ddd7e8f487d6e0088d4a9a42324885a93",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R6CK57NBQFTPUMXAPJURCGXUYT76NQAK/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/V6567JERRHHJW2GNGJGKDRNHR7SNPZK7/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VCMNWKERPBKOEBNL7CLTTX3ZZCZLH7XA/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-2097",
+            "https://rustsec.org/advisories/RUSTSEC-2022-0032.html",
+            "https://security.netapp.com/advisory/ntap-20220715-0011/",
+            "https://ubuntu.com/security/notices/USN-5502-1",
+            "https://www.openssl.org/news/secadv/20220705.txt"
+          ],
+          "PublishedDate": "2022-07-05T11:15:00Z",
+          "LastModifiedDate": "2022-07-23T04:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-37600",
+          "PkgName": "libuuid",
+          "InstalledVersion": "2.37-r0",
+          "FixedVersion": "2.37.2-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-37600",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
+          "Description": "** DISPUTED ** An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:H/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V2Score": 1.2,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-37600",
+            "https://github.com/karelzak/util-linux/commit/1c9143d0c1f979c3daf10e1c37b5b1e916c22a1c",
+            "https://github.com/karelzak/util-linux/issues/1395",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-37600",
+            "https://security.netapp.com/advisory/ntap-20210902-0002/"
+          ],
+          "PublishedDate": "2021-07-30T14:15:00Z",
+          "LastModifiedDate": "2021-10-18T12:18:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-3995",
+          "PkgName": "libuuid",
+          "InstalledVersion": "2.37-r0",
+          "FixedVersion": "2.37.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-3995",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "util-linux: Unauthorized unmount of FUSE filesystems belonging to users with similar uid",
+          "Description": "A logic error was found in the libmount library of util-linux in the function that allows an unprivileged user to unmount a FUSE filesystem. This flaw allows an unprivileged local attacker to unmount FUSE filesystems that belong to certain other users who have a UID that is a prefix of the UID of the attacker in its string form. An attacker may use this flaw to cause a denial of service to applications that use the affected filesystems.",
+          "Severity": "MEDIUM",
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-3995",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3995",
+            "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.37/v2.37.3-ReleaseNotes",
+            "https://ubuntu.com/security/notices/USN-5279-1",
+            "https://www.openwall.com/lists/oss-security/2022/01/24/2"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2021-3996",
+          "PkgName": "libuuid",
+          "InstalledVersion": "2.37-r0",
+          "FixedVersion": "2.37.3-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-3996",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "util-linux: Unauthorized unmount of filesystems in libmount",
+          "Description": "A logic error was found in the libmount library of util-linux in the function that allows an unprivileged user to unmount a FUSE filesystem. This flaw allows a local user on a vulnerable system to unmount other users' filesystems that are either world-writable themselves (like /tmp) or mounted in a world-writable directory. An attacker may use this flaw to cause a denial of service to applications that use the affected filesystems.",
+          "Severity": "MEDIUM",
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-3996",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3996",
+            "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.37/v2.37.3-ReleaseNotes",
+            "https://ubuntu.com/security/notices/USN-5279-1",
+            "https://www.openwall.com/lists/oss-security/2022/01/24/2"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2022-0563",
+          "PkgName": "libuuid",
+          "InstalledVersion": "2.37-r0",
+          "FixedVersion": "2.37.4-r0",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "Description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-209"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V2Score": 1.9,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-0563",
+            "https://lore.kernel.org/util-linux/20220214110609.msiwlm457ngoic6w@ws.net.home/T/#u",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-0563",
+            "https://security.netapp.com/advisory/ntap-20220331-0002/"
+          ],
+          "PublishedDate": "2022-02-21T19:15:00Z",
+          "LastModifiedDate": "2022-06-03T14:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-29458",
+          "PkgName": "ncurses-libs",
+          "InstalledVersion": "6.2_p20210612-r0",
+          "FixedVersion": "6.2_p20210612-r1",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-29458",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "ncurses: segfaulting OOB read",
+          "Description": "ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+              "V2Score": 5.8,
+              "V3Score": 7.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-29458",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29458",
+            "https://invisible-island.net/ncurses/NEWS.html#t20220416",
+            "https://lists.gnu.org/archive/html/bug-ncurses/2022-04/msg00014.html",
+            "https://lists.gnu.org/archive/html/bug-ncurses/2022-04/msg00016.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-29458",
+            "https://ubuntu.com/security/notices/USN-5477-1"
+          ],
+          "PublishedDate": "2022-04-18T21:15:00Z",
+          "LastModifiedDate": "2022-04-27T13:14:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-29458",
+          "PkgName": "ncurses-terminfo-base",
+          "InstalledVersion": "6.2_p20210612-r0",
+          "FixedVersion": "6.2_p20210612-r1",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-29458",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "ncurses: segfaulting OOB read",
+          "Description": "ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:P/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+              "V2Score": 5.8,
+              "V3Score": 7.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-29458",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29458",
+            "https://invisible-island.net/ncurses/NEWS.html#t20220416",
+            "https://lists.gnu.org/archive/html/bug-ncurses/2022-04/msg00014.html",
+            "https://lists.gnu.org/archive/html/bug-ncurses/2022-04/msg00016.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-29458",
+            "https://ubuntu.com/security/notices/USN-5477-1"
+          ],
+          "PublishedDate": "2022-04-18T21:15:00Z",
+          "LastModifiedDate": "2022-04-27T13:14:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-28391",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r7",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-28391",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: remote attackers may execute arbitrary code if netstat is used",
+          "Description": "BusyBox through 1.35.0 allows remote attackers to execute arbitrary code if netstat is used to print a DNS PTR record's value to a VT compatible terminal. Alternatively, the attacker could choose to change the terminal's colors.",
+          "Severity": "CRITICAL",
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-28391",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28391",
+            "https://git.alpinelinux.org/aports/plain/main/busybox/0001-libbb-sockaddr2str-ensure-only-printable-characters-.patch",
+            "https://git.alpinelinux.org/aports/plain/main/busybox/0002-nslookup-sanitize-all-printed-strings-with-printable.patch",
+            "https://gitlab.alpinelinux.org/alpine/aports/-/issues/13661",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-28391"
+          ],
+          "PublishedDate": "2022-04-03T21:15:00Z",
+          "LastModifiedDate": "2022-04-12T17:31:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42378",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42378",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42378",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42378",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42378",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42379",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42379",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42379",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42379",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42379",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:22:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42380",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42380",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42380",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42380",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42380",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:10:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42381",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42381",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42381",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42381",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42381",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:13:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42382",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42382",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42382",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42382",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42382",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:16:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42383",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42383",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42383",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:16:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42384",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42384",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42384",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42384",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42384",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:15:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42385",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42385",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42385",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42385",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42385",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:14:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42386",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r6",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42386",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc()",
+          "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc function",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 6.5,
+              "V3Score": 7.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 6.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42386",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42386",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42386",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-01-04T17:14:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42374",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r4",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42374",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: out-of-bounds read in unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed",
+          "Description": "An out-of-bounds heap read in Busybox's unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed. This can be triggered by any applet/format that",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:P/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H",
+              "V2Score": 3.3,
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 5.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42374",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42374",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42374",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/",
+            "https://ubuntu.com/security/notices/USN-5179-1"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-03-31T16:29:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-42375",
+          "PkgName": "ssl_client",
+          "InstalledVersion": "1.33.1-r3",
+          "FixedVersion": "1.33.1-r5",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-42375",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "busybox: incorrect handling of a special element in ash applet leads to denial of service when processing a crafted shell command",
+          "Description": "An incorrect handling of a special element in Busybox's ash applet leads to denial of service when processing a crafted shell command, due to the shell mistaking specific characters for reserved characters. This may be used for DoS under rare conditions of filtered command input.",
+          "Severity": "MEDIUM",
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 1.9,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 4.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2021-42375",
+            "https://jfrog.com/blog/unboxing-busybox-14-new-vulnerabilities-uncovered-by-claroty-and-jfrog/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6T2TURBYYJGBMQTTN2DSOAIQGP7WCPGV/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQXGOGWBIYWOIVXJVRKHZR34UMEHQBXS/",
+            "https://security.netapp.com/advisory/ntap-20211223-0002/"
+          ],
+          "PublishedDate": "2021-11-15T21:15:00Z",
+          "LastModifiedDate": "2022-03-31T16:29:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-1271",
+          "PkgName": "xz-libs",
+          "InstalledVersion": "5.2.5-r0",
+          "FixedVersion": "5.2.5-r1",
+          "Layer": {
+            "DiffID": "sha256:619b8ea44798d015a0af4e0cd5dcda33013ff3d587a6a99cfee528214b75510e"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-1271",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "gzip: arbitrary-file-write vulnerability",
+          "Description": "An arbitrary file write vulnerability was found in GNU gzip's zgrep utility. When zgrep is applied on the attacker's chosen file name (for example, a crafted file name), this can overwrite an attacker's content to an arbitrary attacker-selected file. This flaw occurs due to insufficient validation when processing filenames with two or more newlines where selected content and the target file names are embedded in crafted multi-line file names. This flaw allows a remote, low privileged attacker to force zgrep to write arbitrary files on the system.",
+          "Severity": "HIGH",
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-1271",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1271",
+            "https://errata.almalinux.org/8/ALSA-2022-1537.html",
+            "https://linux.oracle.com/cve/CVE-2022-1271.html",
+            "https://linux.oracle.com/errata/ELSA-2022-5052.html",
+            "https://lists.gnu.org/r/bug-gzip/2022-04/msg00011.html",
+            "https://ubuntu.com/security/notices/USN-5378-1",
+            "https://ubuntu.com/security/notices/USN-5378-2",
+            "https://ubuntu.com/security/notices/USN-5378-3",
+            "https://ubuntu.com/security/notices/USN-5378-4",
+            "https://www.openwall.com/lists/oss-security/2022/04/07/8"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2018-25032",
+          "PkgName": "zlib",
+          "InstalledVersion": "1.2.11-r3",
+          "FixedVersion": "1.2.12-r0",
+          "Layer": {
+            "DiffID": "sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-25032",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "zlib: A flaw found in zlib when compressing (not decompressing) certain inputs",
+          "Description": "zlib before 1.2.12 allows memory corruption when deflating (i.e., when compressing) if the input has many distant matches.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+              "V3Score": 8.2
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2022/May/33",
+            "http://seclists.org/fulldisclosure/2022/May/35",
+            "http://seclists.org/fulldisclosure/2022/May/38",
+            "http://www.openwall.com/lists/oss-security/2022/03/25/2",
+            "http://www.openwall.com/lists/oss-security/2022/03/26/1",
+            "https://access.redhat.com/security/cve/CVE-2018-25032",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032",
+            "https://errata.almalinux.org/8/ALSA-2022-2201.html",
+            "https://github.com/madler/zlib/commit/5c44459c3b28a9bd3283aaceab7c615f8020c531",
+            "https://github.com/madler/zlib/compare/v1.2.11...v1.2.12",
+            "https://github.com/madler/zlib/issues/605",
+            "https://github.com/sparklemotion/nokogiri/releases/tag/v1.13.4",
+            "https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-v6gp-9mmm-c6p5",
+            "https://groups.google.com/g/ruby-security-ann/c/vX7qSjsvWis/m/TJWN4oOKBwAJ",
+            "https://linux.oracle.com/cve/CVE-2018-25032.html",
+            "https://linux.oracle.com/errata/ELSA-2022-9565.html",
+            "https://lists.debian.org/debian-lts-announce/2022/04/msg00000.html",
+            "https://lists.debian.org/debian-lts-announce/2022/05/msg00008.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DF62MVMH3QUGMBDCB3DY2ERQ6EBHTADB/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NS2D2GFPFGOJUL4WQ3DUAY7HF4VWQ77F/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VOKNP2L734AEL47NRYGVZIKEFOUBQY5Y/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XOKFMSNQ5D5WGMALBNBXU3GE442V74WU/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-25032",
+            "https://security.netapp.com/advisory/ntap-20220526-0009/",
+            "https://support.apple.com/kb/HT213255",
+            "https://support.apple.com/kb/HT213256",
+            "https://support.apple.com/kb/HT213257",
+            "https://ubuntu.com/security/notices/USN-5355-1",
+            "https://ubuntu.com/security/notices/USN-5355-2",
+            "https://ubuntu.com/security/notices/USN-5359-1",
+            "https://ubuntu.com/security/notices/USN-5359-2",
+            "https://www.debian.org/security/2022/dsa-5111",
+            "https://www.openwall.com/lists/oss-security/2022/03/24/1",
+            "https://www.openwall.com/lists/oss-security/2022/03/28/1",
+            "https://www.openwall.com/lists/oss-security/2022/03/28/3",
+            "https://www.oracle.com/security-alerts/cpujul2022.html"
+          ],
+          "PublishedDate": "2022-03-25T09:15:00Z",
+          "LastModifiedDate": "2022-07-25T18:15:00Z"
+        }
+      ]
+    },
+    {
+      "Target": "Python",
+      "Class": "lang-pkgs",
+      "Type": "python-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2022-29217",
+          "PkgName": "PyJWT",
+          "PkgPath": "usr/local/lib/python3.7/site-packages/PyJWT-1.7.1.dist-info/METADATA",
+          "InstalledVersion": "1.7.1",
+          "FixedVersion": "2.4.0",
+          "Layer": {
+            "DiffID": "sha256:deff7018580ab514ea194fb637aaef6f36b509e1094c916060ceeab48a2fbf1b"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-29217",
+          "DataSource": {
+            "ID": "osv",
+            "Name": "Python Packaging Advisory Database",
+            "URL": "https://github.com/pypa/advisory-db"
+          },
+          "Title": "python-jwt: Key confusion through non-blocklisted public key formats",
+          "Description": "PyJWT is a Python implementation of RFC 7519. PyJWT supports multiple different JWT signing algorithms. With JWT, an attacker submitting the JWT token can choose the used signing algorithm. The PyJWT library requires that the application chooses what algorithms are supported. The application can specify `jwt.algorithms.get_default_algorithms()` to get support for all algorithms, or specify a single algorithm. The issue is not that big as `algorithms=jwt.algorithms.get_default_algorithms()` has to be used. Users should upgrade to v2.4.0 to receive a patch for this issue. As a workaround, always be explicit with the algorithms that are accepted and expected when decoding.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-327"
+          ],
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            },
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V2Score": 5,
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2022-29217",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29217",
+            "https://github.com/advisories/GHSA-ffqj-6fqr-9h24",
+            "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc",
+            "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc (2.4.0)",
+            "https://github.com/jpadilla/pyjwt/releases/tag/2.4.0",
+            "https://github.com/jpadilla/pyjwt/security/advisories/GHSA-ffqj-6fqr-9h24",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pyjwt/PYSEC-2022-202.yaml",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5PK7IQCBVNLYJEFTPHBBPFP72H4WUFNX/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6HIYEYZRQEP6QTHT3EHH3RGFYJIHIMAO/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-29217",
+            "https://ubuntu.com/security/notices/USN-5526-1"
+          ],
+          "PublishedDate": "2022-05-24T15:15:00Z",
+          "LastModifiedDate": "2022-06-07T14:40:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-29361",
+          "PkgName": "Werkzeug",
+          "PkgPath": "usr/local/lib/python3.7/site-packages/Werkzeug-1.0.1.dist-info/METADATA",
+          "InstalledVersion": "1.0.1",
+          "FixedVersion": "2.1.1",
+          "Layer": {
+            "DiffID": "sha256:deff7018580ab514ea194fb637aaef6f36b509e1094c916060ceeab48a2fbf1b"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-29361",
+          "DataSource": {
+            "ID": "osv",
+            "Name": "Python Packaging Advisory Database",
+            "URL": "https://github.com/pypa/advisory-db"
+          },
+          "Description": "** DISPUTED ** Improper parsing of HTTP requests in Pallets Werkzeug v2.1.0 and below allows attackers to perform HTTP Request Smuggling using a crafted HTTP request with multiple requests included inside the body. NOTE: the vendor's position is that this behavior can only occur in unsupported configurations involving development mode and an HTTP server from outside the Werkzeug project.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-444"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V2Score": 7.5,
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://github.com/pallets/werkzeug/commit/9a3a981d70d2e9ec3344b5192f86fcaf3210cd85",
+            "https://github.com/pallets/werkzeug/issues/2420"
+          ],
+          "PublishedDate": "2022-05-25T01:15:00Z",
+          "LastModifiedDate": "2022-06-07T21:01:00Z"
+        }
+      ]
+    }
+  ]
+}
