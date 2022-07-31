@@ -208,7 +208,7 @@ read-access        Active   7m56s
 shell-operator     Active   18h
 ```
 
-### > В каждом созданном неймспэйсе пропишем наше приложение
+### > В каждом созданном неймспейсе пропишем наше приложение
 
 ```bash
 > kubectl create -f .\kuber_devsecops.yaml -n read-access
@@ -230,11 +230,15 @@ service/devsecops-front created
 
 ![](./images/kubectl_create_app_in_ns.jpg)
 
-### > Создам группу пользователей
+### > *Создам группу пользователей
 
 Создадим группу пользователей. Это можно сделать либо через интерфейс сайта, либо из консоли командой:
+
+```bash
 az ad group create - - display-name devsec --mail-nickname devsec --query objectId -o tsv
-<b>(актуально только для MS Azure)</b>
+```
+
+<i>пропустил шаг создания группы.</i><br/><b>(нужна подсказка, как это сделать в VK Cloud Solution)</b>
 
 ### > Создам объекты
 
@@ -273,7 +277,7 @@ devsecops-front-5dc7d56f57-t6wm2   1/1     Running   0          107m
 
 ![](./images/kubectl_get_pods.jpg)
 
-### > Удаление подов из неймспэйсов
+### > Удаление подов из неймспейсов
 
 ```bash
 > kubectl delete pod --all -n read-access
@@ -288,8 +292,8 @@ pod "devsecops-db-55d9964b79-nswbz" deleted
 pod "devsecops-front-5dc7d56f57-t6wm2" deleted
 ```
 
-Ноды были успешно удалены из неймспэйсов (read-access, delete-access)
-Возможно предполагалось, что нельзя будет удалить поды из неймспэйса <b>read-access</b>, т.к. текущему пользователю необходимо находиться в группе <b>devsec</b>
+Ноды были успешно удалены из неймспейсов (read-access, delete-access)
+> Возможно предполагалось, что нельзя будет удалить поды из неймспейса <b>read-access</b>, т.к. текущему пользователю необходимо находиться в группе <b>devsec</b>
 
 ![](./images/kubectl_delete_pods_from_ns.jpg)
 
@@ -314,25 +318,13 @@ RGV2U2VjT3BzIFNlY3JldAo=
 ```bash
 > kubectl create -f .\secret.yaml
 
-error: error validating ".\\secret.yaml": error validating data: ValidationError(Secret): unknown field "matedata" in io.k8s.api.core.v1.Secret; if you choose to ignore these errors, turn validation off with --validate=false
+error: error validating ".\\secret.yaml": error validating data: ValidationError(Secret): 
+unknown field "matedata" in io.k8s.api.core.v1.Secret;
+if you choose to ignore these errors, turn validation off with --validate=false
 ```
 
 В файле секрета присутствует ошибка
-
-```yaml
-apiVersion: v1
-kind: Secret
-matedata:
-  name: myapitoken
-type: Opaque
-data:
-  url: 4oCYaHR0cHM6Ly92ZXJ5LXNlY3JldC1hcGkubXlkb21haW4uY29t4oCYCg==
-  token: RGV2U2VjT3BzIFNlY3JldAo=
-```
-
-Неправильынй наименование блока <b>matedata</b>
-
-Исправлю наименование блока на <b>matadata</b>
+Неправильное наименование блока <b>matedata</b>, исправлю его на <b>matadata</b>
 
 ```yaml
 apiVersion: v1
@@ -345,7 +337,7 @@ data:
   token: RGV2U2VjT3BzIFNlY3JldAo=
 ```
 
-Попробую загрузить секрет в Kubernetes
+Загружу секрет из (исправленного) файла [secret.yaml](./resources/secret.yaml) в Kubernetes
 
 ```bash
 > kubectl create -f .\secret.yaml
@@ -391,7 +383,7 @@ type: Opaque
 
 ---
 
-## Недостатки конфигурационного файла (развернутого) или как сделать ещё лучше...
+## Недостатки конфигурационного ([kuber_devsecops.yaml](./resources/kuber_devsecops.yaml)) файла или как сделать ещё лучше...
 
 > <i>docker run -v /tmp/yamls:/app zegl/kube-score score /app/kuber_devsecops.yaml</i>
 
