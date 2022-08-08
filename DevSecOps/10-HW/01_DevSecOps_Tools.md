@@ -45,11 +45,25 @@ variables:
 ```
 
 Добавлю в него "шаблоны" проверок
+
+```yaml
+include:
   - template: Security/Dependency-Scanning.gitlab-ci.yml
   - template: Security/Container-Scanning.gitlab-ci.yml
   - template: Security/License-Scanning.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
+```
+
+Чтобы убрать ошибку, возникающую на этапе Secret Scanning, добавлю переменную "SECRET_DETECTION_HISTORIC_SCAN" со значением <b>\<true></b>
+(включаем историческое сканирование)
+
+```yaml
+variables:
+  SECRET_DETECTION_HISTORIC_SCAN: "true"
+```
+
+Результирующий файл сборки проекта <b>.gitlab-ci.yml</b>
 
 ```yaml
 # You can override the included template(s) by including variable overrides
@@ -85,7 +99,7 @@ variables:
 ```
 
 Запущу пайплайн и посмотрю результат исполнения:
-Все этапы пройдены успешно:
+<br/>Все этапы пройдены успешно:
 - Container Scanning
 - License Scanning
 - Secret Detection
