@@ -38,6 +38,8 @@ docker run -d --rm -p 8100:8000 opensecurity/mobile-security-framework-mobsf:lat
 
 ![MobSF Recent Scan](./images/MobSF_Recent_Scan.jpg)
 
+![MobSF SecurityScoreCard](./images/MobSF_SecurityScoreCard.jpg)
+
 Выделю основные проблемы:
 - <b>App Permissions</b> со статусом <span style="background:red;color:white; padding:3px; border-radius:5px">dangerous</span>
 - <b>Network Security</b> с severity уровня <span style="background:red;color:white; padding:3px; border-radius:5px">high</span> и выше
